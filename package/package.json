@@ -1,0 +1,11 @@
+{
+  "name": "dynamic-reducer",
+  "version": "1.0.0",
+  "description": "Dynamic Reducer is a utility that helps developers manage the store reducer faster, easier and cleaner. Although this library is developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dev9x",
+  "license": "MIT"
+}
