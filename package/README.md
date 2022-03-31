@@ -1,7 +1,7 @@
 # Dynamic Reducer 
 Dynamic Reducer is a utility that helps developers manage the store reducer faster, easier and cleaner. Although this library is developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.
 
-![create oject user](https://vnseattle.com/dynamicReducer/intro.png)
+![create oject user](https://vnseattle.com/dynamicReducer/intro2.png)
 # Example
 
 #### WITHOUT Dynamic Reducer 
@@ -78,14 +78,18 @@ export default combineReducers({
 Import functions from the library.
 
 ```js
-import { create, remove, insert, replace, update, append, clear } from "dynamic-reducer"
+import { create, insert, remove, replace, update, append, clear } from "dynamic-reducer"
 ```
 Here are functions to manage the dynamic store 
 | Function | How to use ( with dispatch ) |
-| ------ | ------ |
-| create | *dispatch*( **create**('YOUR-OBJECT-NAME', { YOUR: 'OBJECT' }) )|
-| remove| |
-|insert| |
+| ------   | ------ |
+| create    | *dispatch*( **create**('YOUR-OBJECT-NAME', { YOUR: OBJECT }) )|
+| insert    | *dispatch*( **insert**('DESTINATION', 'OBJECT-NAME', {YOUR:OBJECT} ) )| 
+| remove    | *dispatch*( **remove**('DESTINATION') )| 
+| replace   | *dispatch*( **replace**('DESTINATION',{YOUR:OBJECT}) )| 
+| update    | *dispatch*( **update**('DESTINATION', {YOUR:OBJECT}) )| 
+| append    | *dispatch*( **append**('DESTINATION',[my-new-array-items]) )| 
+| clear     | *dispatch*( **clear**('DESTINATION') )| 
 
 *The details of how to use them in basic and advanced in below*
 
@@ -108,7 +112,7 @@ I want to create an object named *user* which the basic information from
 https://jsonplaceholder.typicode.com/users/2
 
 ```JS
-import { create } from "ABCLIB";
+import { create } from "dynamic-reducer";
 ...
 const response = await axios.get('https://jsonplaceholder.typicode.com/users/2');
 await dispatch(create('User', response.data));
@@ -119,7 +123,7 @@ await dispatch(create('User', response.data));
 I want to create an array named *users*, which stores a list of users in “ds” 
 
 ```js
-import { create } from "ABCLIB";
+import { create } from "dynamic-reducer";
 ...
 const response = await axios.get('https://jsonplaceholder.typicode.com/users');
 await dispatch(create('Users', response.data));
