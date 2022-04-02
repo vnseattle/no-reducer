@@ -1,4 +1,4 @@
-import { create, append, replace } from 'dynamic-reducer';
+import { create, append, remove } from 'dynamic-reducer';
 
 export const createList = (init = []) => {
     return (dispatch) => {
@@ -12,3 +12,9 @@ export const addToList = (item) => {
         dispatch(append('list', item))
     }
 };
+
+export const deleteItem = (item) => {
+    return (dispatch) => {
+        dispatch(remove('list', item));
+    }
+}
