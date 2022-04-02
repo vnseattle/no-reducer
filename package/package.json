@@ -1,7 +1,7 @@
 {
-  "name": "dynamic-reducer",
+  "name": "no-reducer",
   "version": "1.0.0",
-  "description": "Dynamic Reducer is a utility that helps developers manage the store reducer faster, easier and cleaner",
+  "description": "No-Reducer is a utility that helps developers manage the store reducer without creating it",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
