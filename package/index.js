@@ -6,9 +6,8 @@ import { UPDATE } from './core/update';
 import { APPEND } from './core/append';
 import { CLEAR } from './core/clear';
 
-const initialState = {};
 
-export const reducer = (state = initialState, action) => {
+export const reducer = (state = {}, action) => {
     switch (action.type) {
         case `CREATE`:
             return CREATE(state, action);
@@ -25,7 +24,8 @@ export const reducer = (state = initialState, action) => {
         case "CLEAR":
             return CLEAR(state, action);
         default:
-            return state;
+            return state
+
     }
 }
 
