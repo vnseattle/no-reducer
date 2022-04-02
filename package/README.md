@@ -1,17 +1,17 @@
-# Dynamic Reducer 
-Dynamic Reducer is a utility that helps developers manage the store reducer faster, easier and cleaner. Although this library is developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.
+# No Reducer
+No Reduceris a utility that helps developers manage the store reducer faster, easier and cleaner. Although this library is developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.
 
-![create oject user](https://vnseattle.com/dynamicReducer/intro2.png)
+![create oject user](https://vnseattle.com/No Reducer/intro2.png)
 # Example
 
-#### WITHOUT Dynamic Reducer 
+#### WITHOUT No-Reducer
 ```js
 // ACTION
 export const action = () => {
   return async (dispatch) => {
     try {
       let response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      dispatch(actionCreator(response.data)); // Dynamic reducer command
+      dispatch(actionCreator(response.data)); // No Reducercommand
     } catch (err) {
       dispatch(setStatusCreator(err));
     }
@@ -40,9 +40,9 @@ const siteReducer = (state = initialState, action) => {
 
 export default siteReducer
 ```
-### With Dynamic Reducer 
+### With No-Reducer
 ```js
-import {create} from 'dynamic-reducer'
+import {create} from 'no-reducer'
 
 // ACTION
 export const action = () => {
@@ -56,31 +56,31 @@ export const action = () => {
   };
 };
 
-// Dynamic Reducer will work on Reducers and Action Creators for you
+// No Reducerwill work on Reducers and Action Creators for you
 ```
 ### Set it up
-To use this Dynamic Reducer, you need a simple installation by importing this Dynamic Reducer Library on the page of “combineReducers”.You can name any name you want for the dynamic store object. 
+To use this No  Reducer, you need a simple installation by importing this No ReducerLibrary on the page of “combineReducers”.You can name any name you want for the No  store object. 
 
 For example, I named it “ds” in the combineReducers of Redux.
 ```js
 import { combineReducers } from "redux";
-import { reducer } from "dynamic-reducer";
+import { reducer } from "no-reducer";
 
 export default combineReducers({
     ds: reducer
 });
 ```
 
-![create array users](https://vnseattle.com/dynamicReducer/setup.PNG)
+![create array users](https://vnseattle.com/No Reducer/setup.PNG)
 
 ## How to use 
 
 Import functions from the library.
 
 ```js
-import { create, insert, remove, replace, update, append, clear } from "dynamic-reducer"
+import { create, insert, remove, replace, update, append, clear } from "no-reducer"
 ```
-Here are functions to manage the dynamic store 
+Here are functions to manage the No  store 
 | Function | How to use ( with dispatch ) |
 | ------   | ------ |
 | create    | *dispatch*( **create**('YOUR-OBJECT-NAME', { YOUR: OBJECT }) )|
@@ -94,7 +94,7 @@ Here are functions to manage the dynamic store
 *The details of how to use them in basic and advanced in below*
 
 ### Create
-This function is used to create an object or an array inside of the root dynamic store.
+This function is used to create an object or an array inside of the root No  store.
 Each object has a unique name; if there is a *duplicated name*, the object's value will be *overridden*.
 
 #### Create an object or array
@@ -112,23 +112,23 @@ I want to create an object named *user* which the basic information from
 https://jsonplaceholder.typicode.com/users/2
 
 ```JS
-import { create } from "dynamic-reducer";
+import { create } from "no-reducer";
 ...
 const response = await axios.get('https://jsonplaceholder.typicode.com/users/2');
 await dispatch(create('User', response.data));
 ```
-![create oject user](https://vnseattle.com/dynamicReducer/CreatedObjectUser.PNG)
+![create oject user](https://vnseattle.com/No Reducer/CreatedObjectUser.PNG)
 
 ##### Create an array object 
 I want to create an array named *users*, which stores a list of users in “ds” 
 
 ```js
-import { create } from "dynamic-reducer";
+import { create } from "no-reducer";
 ...
 const response = await axios.get('https://jsonplaceholder.typicode.com/users');
 await dispatch(create('Users', response.data));
 ```
-![create array users](https://vnseattle.com/dynamicReducer/CreatedObjectUsers.PNG)
+![create array users](https://vnseattle.com/No Reducer/CreatedObjectUsers.PNG)
 
 ##### Create nested objects and arrays
 
@@ -165,7 +165,7 @@ students: [
 ]
 }));
 ```
-![create array users](https://vnseattle.com/dynamicReducer/CreateNestedObject.png)
+![create array users](https://vnseattle.com/No Reducer/CreateNestedObject.png)
 
 
 ### *Destination path 
@@ -175,17 +175,17 @@ For example: we want to modify the company's name inside the User. We have to wr
 ```js 
 User>company>name 
 ```
-![destination path 1](https://vnseattle.com/dynamicReducer/DestinationPath.PNG)
+![destination path 1](https://vnseattle.com/No Reducer/DestinationPath.PNG)
 
 See more examples at "Example of using *Destination Path*"
 
 Sometimes, you may need to go through an array of objects; you can use a vertical bar to determine which item in that array you want to go through. 
 For example: Users|id=3>name  
 
-![destination path 2](https://vnseattle.com/dynamicReducer/DestinationPath2.PNG)
+![destination path 2](https://vnseattle.com/No Reducer/DestinationPath2.PNG)
 
 ### Insert
-Insert function is used to insert an object, an array, or data to a node in the dynamic store tree.
+Insert function is used to insert an object, an array, or data to a node in the No  store tree.
 ```js
 dispatch(insert('DESTINATION', 'OBJECT-NAME', PAYLOAD )); 
 ```
@@ -200,14 +200,14 @@ We want to add an object ```{ food: ‘crawfish’ }``` to the User object.
 ```js
 dispatch(insert('User', 'food', 'crawfish'));
 ```
-![destination path 2](https://vnseattle.com/dynamicReducer/InsertFoodUser.PNG)
+![destination path 2](https://vnseattle.com/No Reducer/InsertFoodUser.PNG)
 
 
 Insert an array ```meal: ["crawfish", "corn", "hotdog", "shrimp"]``` to the User 
 ```js
 dispatch(insert('User', 'meal', ["crawfish", "corn", "hotdog", "shrimp"]));
 ```
-![destination path 2](https://vnseattle.com/dynamicReducer/InsertArrayMeal.PNG)
+![destination path 2](https://vnseattle.com/No Reducer/InsertArrayMeal.PNG)
 
 #### Insert with condition
 There are 2 optional parameters in case you want to insert the object to an item in an array
@@ -223,11 +223,11 @@ We want to insert ```{ Nickname: ['Crawfish','Crawdad','Crayfish']}``` to the it
 ```JS
 dispatch(insert('Users', "Nickname", ['Crawfish','Crawdad','Crayfish'], 2, 'id'));
 ```
-![Insert with condition](https://vnseattle.com/dynamicReducer/InsertNicknames.png)
+![Insert with condition](https://vnseattle.com/No Reducer/InsertNicknames.png)
 
 #### Example of using *Destination Path*
 I want to insert ```{ gps: {x,y,z} }``` into ```User>address>geo```
-![Insert with condition](https://vnseattle.com/dynamicReducer/InsertGPS.PNG)
+![Insert with condition](https://vnseattle.com/No Reducer/InsertGPS.PNG)
 
 ### Remove 
 There are two cases to remove objects
@@ -240,7 +240,7 @@ Example:
 ```js
 dispatch(remove('User>address>geo'))
 ```
-![Remove an object](https://vnseattle.com/dynamicReducer/RemoveAnObject.PNG)
+![Remove an object](https://vnseattle.com/No Reducer/RemoveAnObject.PNG)
 
 #### Remove an item in an array
 To remove an item object in an array of objects, you can write the value key of the object you want to remove.

@@ -1,5 +1,5 @@
 /*
-Dynamic Reducer
+No Reducer
 
 Copyright © 2022 Henry Nguyen (Dev9x)
 
