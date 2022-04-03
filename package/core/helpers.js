@@ -73,3 +73,13 @@ export const clearObject = (object) => {
     return null
 
 }
+
+
+export const analyzeObject = (state, action) => {
+    console.log('used new')
+    const nameArr = nameToArray(action.name); // names in array
+    const pathObjects = createPathObjects(state, nameArr); // objects in array   
+    const targetIndex = nameArr.length - 1; // get target index
+    const targetName = nameArr[targetIndex].split('|')[0]; // target object's name
+    return { nameArr, pathObjects, targetIndex, targetName }
+} 
