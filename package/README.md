@@ -1,7 +1,8 @@
-# No Reducer
-No Reduceris a utility that helps developers manage the store reducer faster, easier and cleaner. Although this library is developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.
+# No-reducer
+No-Reducer is a utility that helps developers manage the reducers without touching any reducer. 😲
+Although this library was developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.
 
-![create oject user](https://vnseattle.com/dynamicReducer/intro2.png)
+![create oject user](https://vnseattle.com/dynamicReducer/intro3.png)
 # Example
 
 #### WITHOUT No-Reducer
@@ -11,7 +12,7 @@ export const action = () => {
   return async (dispatch) => {
     try {
       let response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      dispatch(actionCreator(response.data)); // No Reducercommand
+      dispatch(actionCreator(response.data)); 
     } catch (err) {
       dispatch(setStatusCreator(err));
     }
@@ -56,12 +57,16 @@ export const action = () => {
   };
 };
 
-// No Reducerwill work on Reducers and Action Creators for you
+// No Reducer will work on reducers and action creators for you
 ```
 ### Set it up
-To use this No  Reducer, you need a simple installation by importing this No ReducerLibrary on the page of “combineReducers”.You can name any name you want for the No  store object. 
+```npm
+npm i no-reducer
+```
+To use NoReducer, you need a simple installation by importing ```no-reducer``` on the page of ```combineReducers```.
+You can name any name you want for the store object. 
 
-For example, I named it “ds” in the combineReducers of Redux.
+For example, I named it ```ds``` in the ```combineReducers``` of Redux.
 ```js
 import { combineReducers } from "redux";
 import { reducer } from "no-reducer";
@@ -71,7 +76,7 @@ export default combineReducers({
 });
 ```
 
-![create array users](https://vnseattle.com/dynamicReducer/setup.PNG)
+![create array users](https://vnseattle.com/dynamicReducer/setup2.png)
 
 ## How to use 
 
@@ -80,21 +85,21 @@ Import functions from the library.
 ```js
 import { create, insert, remove, replace, update, append, clear } from "no-reducer"
 ```
-Here are functions to manage the No  store 
+Here are functions to manage the reducers
 | Function | How to use ( with dispatch ) |
 | ------   | ------ |
 | create    | *dispatch*( **create**('YOUR-OBJECT-NAME', { YOUR: OBJECT }) )|
-| insert    | *dispatch*( **insert**('DESTINATION', 'OBJECT-NAME', {YOUR:OBJECT} ) )| 
+| insert    | *dispatch*( **insert**(```DESTINATION```, 'OBJECT-NAME', {YOUR:OBJECT} ) )| 
 | remove    | *dispatch*( **remove**('DESTINATION') )| 
 | replace   | *dispatch*( **replace**('DESTINATION',{YOUR:OBJECT}) )| 
 | update    | *dispatch*( **update**('DESTINATION', {YOUR:OBJECT}) )| 
 | append    | *dispatch*( **append**('DESTINATION',[my-new-array-items]) )| 
 | clear     | *dispatch*( **clear**('DESTINATION') )| 
 
-*The details of how to use them in basic and advanced in below*
+*The details of how to use them in basic and ```DESTINATION``` in below*
 
 ### Create
-This function is used to create an object or an array inside of the root No  store.
+This function is used to create an object or an array inside of the root reducer.
 Each object has a unique name; if there is a *duplicated name*, the object's value will be *overridden*.
 
 #### Create an object or array
@@ -108,7 +113,7 @@ dispatch(create('YOUR-ARRAY-NAME', ['YOUR', 'ARRAY' ]));
 
 ### *Example:*
 ##### Create an object
-I want to create an object named *user* which the basic information from
+I want to create an object named ```User``` from
 https://jsonplaceholder.typicode.com/users/2
 
 ```JS
@@ -117,10 +122,10 @@ import { create } from "no-reducer";
 const response = await axios.get('https://jsonplaceholder.typicode.com/users/2');
 await dispatch(create('User', response.data));
 ```
-![create oject user](https://vnseattle.com/dynamicReducer/CreatedObjectUser.PNG)
+![create oject user](https://vnseattle.com/dynamicReducer/CreatedObjectUser2.png)
 
 ##### Create an array object 
-I want to create an array named *users*, which stores a list of users in “ds” 
+I want to create an array named ```Users```, which stores a list of users in ```ds``` 
 
 ```js
 import { create } from "no-reducer";
@@ -128,9 +133,10 @@ import { create } from "no-reducer";
 const response = await axios.get('https://jsonplaceholder.typicode.com/users');
 await dispatch(create('Users', response.data));
 ```
-![create array users](https://vnseattle.com/dynamicReducer/CreatedObjectUsers.PNG)
+![create array users](https://vnseattle.com/dynamicReducer/CreatedObjectUsers2.png)
 
 ##### Create nested objects and arrays
+I will create my own json data with nested objects and arrays called ```MyClass```
 
 ```js
 dispatch(create('MyClass', 
@@ -165,27 +171,29 @@ students: [
 ]
 }));
 ```
-![create array users](https://vnseattle.com/dynamicReducer/CreateNestedObject.png)
+![create array users](https://vnseattle.com/dynamicReducer/CreatedObjectNested2.png)
 
 
 ### *Destination path 
-Before we walk through other functions, here is a definition of “Destination Path” in which we will use a symbol “>” to point out what particular object that we want to modify.
+Before we walk through other functions, here is a definition of ```Destination Path``` in which we will use a symbol ```>``` to point out what particular object that we want to modify.
 
-For example: we want to modify the company's name inside the User. We have to write a path to go to that named object. In this case, we use “>” symbol to point out:
+For example: we want to modify the ```name``` inside ```company``` inside the ```User```.
+We have to write a path to go to that named object. In this case, we use ```>``` symbol to point out:
 ```js 
 User>company>name 
 ```
-![destination path 1](https://vnseattle.com/dynamicReducer/DestinationPath.PNG)
+![destination path 1](https://vnseattle.com/dynamicReducer/DestinationPath2.png)
+Sometimes, you may need to go through an ```array of objects```; you can use a vertical bar ```|``` to determine which item in that array you want to go through.
+
+For example: I want to modify ```companies``` in the item has ```id=3``` in array of ```students``` in object ```MyClass```. My destination path will be 
+```js 
+MyClass>students|id=3>companies 
+```
 
 See more examples at "Example of using *Destination Path*"
 
-Sometimes, you may need to go through an array of objects; you can use a vertical bar to determine which item in that array you want to go through. 
-For example: Users|id=3>name  
-
-![destination path 2](https://vnseattle.com/dynamicReducer/DestinationPath2.PNG)
-
 ### Insert
-Insert function is used to insert an object, an array, or data to a node in the No  store tree.
+Insert function is used to insert an object, an array, or data to a node in the reducer tree.
 ```js
 dispatch(insert('DESTINATION', 'OBJECT-NAME', PAYLOAD )); 
 ```
@@ -200,14 +208,14 @@ We want to add an object ```{ food: ‘crawfish’ }``` to the User object.
 ```js
 dispatch(insert('User', 'food', 'crawfish'));
 ```
-![destination path 2](https://vnseattle.com/dynamicReducer/InsertFoodUser.PNG)
+![destination path 2](https://vnseattle.com/dynamicReducer/InsertAnObject2.png)
 
 
 Insert an array ```meal: ["crawfish", "corn", "hotdog", "shrimp"]``` to the User 
 ```js
 dispatch(insert('User', 'meal', ["crawfish", "corn", "hotdog", "shrimp"]));
 ```
-![destination path 2](https://vnseattle.com/dynamicReducer/InsertArrayMeal.PNG)
+![destination path 2](https://vnseattle.com/dynamicReducer/InsertMeal2.png)
 
 #### Insert with condition
 There are 2 optional parameters in case you want to insert the object to an item in an array
@@ -218,21 +226,22 @@ There are 2 optional parameters in case you want to insert the object to an item
 dispatch(insert('DESTINATION', 'OBJECT-NAME', PAYLOAD, VALUE, KEY )); 
 ```
 Example:
-We want to insert ```{ Nickname: ['Crawfish','Crawdad','Crayfish']}``` to the item that has id = 2 in the Users array. So the key is “id,” and “2” is the value. 
+We want to insert ```{ Nickname: ['Crawfish','Crawdad','Crayfish']}``` to the item that has ```id = 2``` in the ```Users```  array. 
+So  the ```value``` is ```2``` and the ```key``` is ```id```.
 
 ```JS
 dispatch(insert('Users', "Nickname", ['Crawfish','Crawdad','Crayfish'], 2, 'id'));
 ```
-![Insert with condition](https://vnseattle.com/dynamicReducer/InsertNicknames.png)
+![Insert with condition](https://vnseattle.com/dynamicReducer/InsertWIthCondition.png)
 
 #### Example of using *Destination Path*
 I want to insert ```{ gps: {x,y,z} }``` into ```User>address>geo```
-![Insert with condition](https://vnseattle.com/dynamicReducer/InsertGPS.PNG)
+![Insert with condition](https://vnseattle.com/dynamicReducer/InsertWithDes.png)
 
 ### Remove 
 There are two cases to remove objects
 #### Remove an object
-Remove the whole object by writing down the name of it. You can also use destination path* to point to the object you want to remove.
+Remove the whole object by writing down the name of it. You can also use ```destination path``` to point to the object you want to remove.
 ```js
 dispatch(remove('DESTINATION'))
 ```
@@ -240,7 +249,7 @@ Example:
 ```js
 dispatch(remove('User>address>geo'))
 ```
-![Remove an object](https://vnseattle.com/dynamicReducer/RemoveAnObject.PNG)
+![Remove an object](https://vnseattle.com/dynamicReducer/removedObject2.png)
 
 #### Remove an item in an array
 To remove an item object in an array of objects, you can write the value key of the object you want to remove.
@@ -251,47 +260,56 @@ Example: Remove user with id=8 in Users
 ```js
 dispatch(remove('Users', 8, 'id'))
 ```
+
+![Remove an object](https://vnseattle.com/dynamicReducer/removeItemArray.png)
+
 To remove an item in an array ( without key ), you can directly write the value which you want to remove.
 
 Example: Remove a meal in food of User
 ```js
 dispatch(remove('User>meal','shrimp))
 ```
+![Remove an object](https://vnseattle.com/dynamicReducer/removeItemArrayNoKey.png)
 
 ### Replace 
+![Remove an object](https://vnseattle.com/dynamicReducer/ReplaceIs.PNG)
 There are two cases to replace objects
 #### Replace an object
-Replace the whole object by writing down the name of it. You can also use destination path* to point to the object you want to remove.
+Replace the whole object by writing down the name of it. 
+You can also use ```destination path``` to point to the object you want to remove.
 ```js
 dispatch(replace('DESTINATION',PAYLOAD));
 ```
-Example: replace name of user
+Example: replace ```name``` of ```User```
 ```js
 dispatch(replace('User>name', "Crawfish Guy"))
 ```
+![Replace an object](https://vnseattle.com/dynamicReducer/replaceAnObject.png)
 
 #### Replace an item in an array
 To replace an item object in an array of objects, you can write the value key of the object you want to replace.
 ```js
 dispatch(replace('DESTINATION',CONDITION-VALUE,CONDITION-KEY))
 ```
-Example: Replace User with id 1 in Users
+Example: Replace User with ```id = 1``` in ```Users```
 ```js
 dispatch(replace('Users', { name: "Crawfish" }, 1, 'id'))
 ```
-To remove an item in an array ( without key ), you can directly write the value which you want to remove.
+![Replace an object](https://vnseattle.com/dynamicReducer/replaceObject.png)
 
+To remove an item in an array ( without key ), you can directly write the value which you want to remove.
 Example: change the meal crawfish to crayfish
 ```js
 dispatch(replace('User>meal', "crayfish", 'crawfish'))
 ```
-
+![Replace an object](https://vnseattle.com/dynamicReducer/replaceItemInArrayNoKey.png)
 ### Update
-The difference between 'replace' and 'update' is the replace will remove the current object and place another object to its position. The update is just to change the attribute ( value ) based on the object's key. 
-
+The difference between ```replace``` and ```update``` is the ```replace``` will remove the current object and place another object to its position. The ```update``` is just to change the attribute ( ```value``` ) based on the object's key. 
+![What is Update](https://vnseattle.com/dynamicReducer/UpdateIs.PNG)
 There are two cases to update objects
 #### Update an object
-Update the whole object by writing down the name of it. You can also use destination path* to point to the object you want to update.
+Update the whole object by writing down the name of it. 
+You can also use ```destination path``` to point to the object you want to update.
 ```js
 dispatch(update('DESTINATION', {YOUR:OBJECT}))
 ```
@@ -299,38 +317,38 @@ Example: Update website of user
 ```js
 dispatch(update('User', { website: "crawfish.com" }))
 ```
+![What is Update](https://vnseattle.com/dynamicReducer/UpdateAnObject2.png)
 
 #### Update an item in an array
 To update an item object in an array of objects, you can write the value key of the object you want to update.
 ```js
 dispatch(update('DESTINATION',CONDITION-VALUE,CONDITION-KEY))
 ```
-Example: Update user with id=2
+Example: Update ```Users``` with ```id=2```
 ```js
 dispatch(update('Users', { name: "Crawfish Lover" }, 2, 'id'))
 ```
+![Update User with condition](https://vnseattle.com/dynamicReducer/UpdateUsersInArray.png)
 
-Example: Using destination path
+Example: Using destination path. Update ```companies``` with ```cid=5``` in ```students``` with ```id=4``` in ```MyClass``` 
 ```js
 dispatch(update('MyClass>students|id=4>companies', { name: "Meta" }, 5, 'cid'))
 ```
-
+![Update Nested Array](https://vnseattle.com/dynamicReducer/updateTetedArray2.png)
 ### Append
-Append is the function that is used to add new elements to an array. That’s it. 
-
+Append is the function that is used to add new elements to an array.
 ```js
 dispatch(append('DESTINATION',[my-new-array-items]));
 ```
 Exmaple: Append new users
-
 ```js
 response = await axios.get('https://jsonplaceholder.typicode.com/users');
 await dispatch(append('Users', response.data))
 ```
 
-### Clear
-Clear is a function that we use to “remove all” the object's value. 
 
+### Clear
+Clear is a function that we use to change the object's ```values``` to be ```null``` 
 #### Clear an object
 ```js
 dispatch(clear('DESTINATION'));
@@ -339,6 +357,7 @@ Example: Clear User
 ```js
 await dispatch(clear('User'))
 ```
+![Append to an Array](https://vnseattle.com/dynamicReducer/clearObject.png)
 #### Clear an item in an array
 ```js
 dispatch(clear('DESTINATION',CONDITION-VALUE,CONDITION-KEY));
@@ -348,5 +367,6 @@ Example: Clear Users with id = 7
 ```js
 dispatch(clear('Users', 7, 'id'))
 ```
+![Append to an Array](https://vnseattle.com/dynamicReducer/clearItemInAnArray.png)
 
-End 
+Have fun!

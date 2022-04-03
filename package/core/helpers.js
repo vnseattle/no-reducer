@@ -36,14 +36,8 @@ export const getTargetIndex = (action, targetObjectArr) => {
 export const clearObject = (object) => {
     return [object].map(obj => {
         obj = Object.assign({}, obj);
-        for (let k in obj) {
-            if (typeof obj[k] === 'object') {
-                obj[k] = null
-            } else if (isNaN(obj[k])) {
-                obj[k] = ''
-            } else {
-                obj[k] = -1
-            }
+        for (let i in obj) {
+            obj[i] = null
         }
         return obj;
     })[0];
