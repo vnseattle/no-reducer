@@ -1,22 +1,17 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import List from './components/List';
 import Input from './components/Input';
+import Edit from './components/Edit';
 
-import { createList } from './actions/actionTodoList';
-
-const App = (props) => {
-
-  useEffect(() => {
-    props.createList(["Hello world"])
-  })
+const App = () => {
 
   return (
     <div>
       <List />
       <Input />
+      <Edit />
     </div>
   );
 }
 
-export default connect(null, { createList })(App);
+export default App;

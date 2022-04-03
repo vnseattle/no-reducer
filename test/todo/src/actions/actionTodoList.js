@@ -1,20 +1,30 @@
-import { create, append, remove } from 'dynamic-reducer';
+import { create, append, remove, update } from 'no-reducer';
 
-export const createList = (init = []) => {
+// CREATE
+export const selectItem = (id) => {
     return (dispatch) => {
-        dispatch(create('list', [...init]))
+        dispatch(create('selectedId', id))
     }
 }
 
+// APPEND
 export const addToList = (item) => {
     return (dispatch) => {
-        console.log(item)
         dispatch(append('list', item))
     }
 };
 
-export const deleteItem = (item) => {
+// REMOVE
+export const deleteItem = (id) => {
     return (dispatch) => {
-        dispatch(remove('list', item));
+        dispatch(remove('list', id, 'id'));
+    }
+}
+
+
+// UPDATE
+export const saveItemInList = (id, task) => {
+    return (dispatch) => {
+        dispatch(update('list', { task: task }, id, 'id'))
     }
 }
