@@ -1,11 +1,13 @@
 {
   "name": "no-reducer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "No-Reducer is a utility that helps developers manage the store reducer without touching any reducer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/owner/project#readme",
+  "url": "https://github.com/vnseattle/no-reducer",
   "keywords": [
     "no-reducer",
     "redux",
