@@ -1,5 +1,7 @@
 import { nameToArray, createPathObjects, getTargetIndex, clearObject } from "./helpers";
-
+/***************************************
+ * Clear objects, set all value to null
+ ***************************************/
 export const CLEAR = (state, action) => {
     const nameArr = nameToArray(action.name)
     const pathObjects = createPathObjects(state, nameArr)
@@ -11,7 +13,6 @@ export const CLEAR = (state, action) => {
         pathObjects[targetIndex][targetName] = clearObject(pathObjects[targetIndex][targetName]);
     } else {
         const targetObjectArr = pathObjects[targetIndex][targetName]
-        console.log(targetObjectArr);
         let index = getTargetIndex(action, targetObjectArr);
 
         if (index >= 0) {

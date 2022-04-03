@@ -1,5 +1,7 @@
 import { nameToArray, createPathObjects } from "./helpers";
-
+/**********************************
+ * Append items to current array
+ **********************************/
 export const APPEND = (state, action) => {
     const nameArr = nameToArray(action.name);
     const pathObjects = createPathObjects(state, nameArr);

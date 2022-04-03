@@ -1,5 +1,7 @@
 import { nameToArray, createPathObjects, getTargetIndex } from "./helpers";
-
+/*********************************************
+ * insert an object to a node in object tree
+ ********************************************/
 export const INSERT = (state, action) => {
     const nameArr = nameToArray(action.name)
     const pathObjects = createPathObjects(state, nameArr)

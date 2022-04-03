@@ -369,4 +369,5 @@ dispatch(clear('Users', 7, 'id'))
 ```
 ![Append to an Array](https://vnseattle.com/dynamicReducer/clearItemInAnArray.png)
 
-Have fun!
+Have fun <3
+2022 Henry Nguyen (Dev9x)

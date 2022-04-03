@@ -1,5 +1,7 @@
 import { nameToArray, createPathObjects, getTargetIndex } from "./helpers";
-
+/*********************************************
+ * update target object
+ ********************************************/
 export const UPDATE = (state, action) => {
     const nameArr = nameToArray(action.name)
     const pathObjects = createPathObjects(state, nameArr)

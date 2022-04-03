@@ -1,5 +1,7 @@
 import { nameToArray, createPathObjects, getTargetIndex } from "./helpers";
-
+/*********************************************
+ * replace target object
+ ********************************************/
 export const REPLACE = (state, action) => {
     const nameArr = nameToArray(action.name)
     const pathObjects = createPathObjects(state, nameArr)

@@ -10,7 +10,7 @@ import thunk from "redux-thunk";
 const initialState = {
   ds: {
     list: [],
-    selectedId: 0
+    selectedId: null
   }
 };
 

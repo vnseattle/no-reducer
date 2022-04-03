@@ -1,3 +1,9 @@
+/**
+ * get object's children
+ * @param {*} object 
+ * @param {*} name of the child
+ * @returns object's children
+ */
 export const getChildren = (obj, name) => {
     if (name.indexOf('|') > 0) {
         const rname = name.split('|')[0];
@@ -9,11 +15,22 @@ export const getChildren = (obj, name) => {
     return obj[name]
 }
 
+/**
+ * convert a string to an array
+ * @param {*} name as a string
+ * @returns a string name to an array
+ */
 export const nameToArray = (name) => {
     return name.split('>');
 }
 
 
+/**
+ * push all objects in an array
+ * @param {*} state 
+ * @param {*} object names in arrary
+ * @returns an object array
+ */
 export const createPathObjects = (state, nameArr) => {
     const pathObjects = [state];
     let tmpObj = state;
@@ -24,6 +41,12 @@ export const createPathObjects = (state, nameArr) => {
     return pathObjects;
 }
 
+/**
+ * get index of target if the target is an array
+ * @param {*} action 
+ * @param {*} target object
+ * @returns index 
+ */
 export const getTargetIndex = (action, targetObjectArr) => {
     let index = targetObjectArr.findIndex(elm => elm[action.target] === action.value);
     if (index === -1) {
@@ -32,13 +55,21 @@ export const getTargetIndex = (action, targetObjectArr) => {
     return index
 }
 
-
+/**
+ * set all values be null
+ * @param {*} object 
+ * @returns all values be null
+ */
 export const clearObject = (object) => {
-    return [object].map(obj => {
-        obj = Object.assign({}, obj);
-        for (let i in obj) {
-            obj[i] = null
-        }
-        return obj;
-    })[0];
+    if (typeof object === 'object') {
+        return [object].map(obj => {
+            obj = Object.assign({}, obj);
+            for (let i in obj) {
+                obj[i] = null
+            }
+            return obj;
+        })[0];
+    }
+    return null
+
 }

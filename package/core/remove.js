@@ -1,5 +1,7 @@
 import { nameToArray, createPathObjects, getTargetIndex } from "./helpers";
-
+/*********************************************
+ * remove target object
+ ********************************************/
 export const REMOVE = (state, action) => {
     const nameArr = nameToArray(action.name)
     const pathObjects = createPathObjects(state, nameArr)

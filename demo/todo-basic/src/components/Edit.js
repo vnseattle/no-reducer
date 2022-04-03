@@ -16,6 +16,7 @@ const Edit = (props) => {
     }
 
     return (
+        props.ds.selectedId &&
         <div style={coverStyle}>
             <div style={{ float: 'right' }}>Component "Edit"</div>
             ID:{props.ds.selectedId}

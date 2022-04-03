@@ -1,4 +1,4 @@
-import { create, append, remove, update } from 'no-reducer';
+import { create, append, remove, update, replace } from 'no-reducer';
 
 // CREATE
 export const selectItem = (id) => {
@@ -14,10 +14,11 @@ export const addToList = (item) => {
     }
 };
 
-// REMOVE
+// REMOVE, REPLACE
 export const deleteItem = (id) => {
     return (dispatch) => {
         dispatch(remove('list', id, 'id'));
+        dispatch(replace('selectedId', null));
     }
 }
 
