@@ -336,7 +336,8 @@ dispatch(update('MyClass>students|id=4>companies', { name: "Meta" }, 5, 'cid'))
 ```
 ![Update Nested Array](https://vnseattle.com/dynamicReducer/updateTetedArray2.png)
 ### Append
-Append is the function that is used to add new elements to an array.
+Append is the function that is used to merge new array to an array.
+
 ```js
 dispatch(append('DESTINATION',[my-new-array-items]));
 ```

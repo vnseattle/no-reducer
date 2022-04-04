@@ -10,7 +10,7 @@ export const selectItem = (id) => {
 // APPEND
 export const addToList = (item) => {
     return (dispatch) => {
-        dispatch(append('list', item))
+        dispatch(append('list', [item]))
     }
 };
 
