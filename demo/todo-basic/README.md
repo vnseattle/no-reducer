@@ -10,7 +10,7 @@ Build a simple Todo List with no-reducer
 npm i 
 ```
 
-``js
+```js
 npm i no-reducer
 ```
 
