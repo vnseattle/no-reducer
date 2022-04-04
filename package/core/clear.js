@@ -1,4 +1,4 @@
-import { analyzeObject, clearObject } from "./helpers";
+import { analyzeObject, clearObject, getTargetIndex } from "./helpers";
 
 /***************************************
  * Clear objects, set all value to null
