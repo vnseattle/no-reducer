@@ -4,7 +4,7 @@
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 
 
-![DevTools](https://vnseattle.com/dynamicReducer/demoDevTool.png)
+![DevTools](https://vnseattle.com/dynamicReducer/demoDevTool.PNG)
 
 # INSTALLATION 
 
