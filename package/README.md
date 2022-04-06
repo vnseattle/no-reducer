@@ -6,12 +6,32 @@ Although this library was developed to work with Redux, this is an add-on librar
 
 ## Demo 
 
-[Todo List](https://github.com/vnseattle/no-reducer/tree/main/demo/todo-basic )
-[All features](https://github.com/vnseattle/no-reducer/tree/main/demo/main )
+[Todo List - Src code and instruction ](https://github.com/vnseattle/no-reducer/tree/main/demo/todo-basic )
+
+[All features  - Src code and instruction ](https://github.com/vnseattle/no-reducer/tree/main/demo/main )
 
 # Example
 
-#### WITHOUT No-Reducer
+### With No-Reducer 😁 
+```js
+import {create} from 'no-reducer'
+
+// ACTION
+export const action = () => {
+  return async (dispatch) => {
+    try {
+      let response = await axios.get('https://jsonplaceholder.typicode.com/users');
+      await dispatch(create('users', response.data));
+    } catch (err) {
+      dispatch(setStatusCreator(err));
+    }
+  };
+};
+
+// No Reducer will work on reducers and action creators for you  😲
+```
+
+#### WITHOUT No-Reducer 😭 
 ```js
 // ACTION
 export const action = () => {
@@ -47,24 +67,7 @@ const siteReducer = (state = initialState, action) => {
 
 export default siteReducer
 ```
-### With No-Reducer
-```js
-import {create} from 'no-reducer'
 
-// ACTION
-export const action = () => {
-  return async (dispatch) => {
-    try {
-      let response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      await dispatch(create('users', response.data));
-    } catch (err) {
-      dispatch(setStatusCreator(err));
-    }
-  };
-};
-
-// No Reducer will work on reducers and action creators for you
-```
 ### Set it up
 ```npm
 npm i no-reducer
