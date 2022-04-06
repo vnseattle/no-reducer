@@ -3,9 +3,35 @@ No-Reducer is a utility that helps developers manage the reducers without touchi
 Although this library was developed to work with Redux, this is an add-on library; developers can also use it with any reducer in any pattern.
 
 ![create oject user](https://vnseattle.com/dynamicReducer/intro3.png)
+
+## Demo 
+
+[Todo List - Src code and instruction ](https://github.com/vnseattle/no-reducer/tree/main/demo/todo-basic )
+
+[All features  - Src code and instruction ](https://github.com/vnseattle/no-reducer/tree/main/demo/main )
+
 # Example
 
-#### WITHOUT No-Reducer
+### With No-Reducer 😁 
+```js
+import {create} from 'no-reducer'
+
+// ACTION
+export const action = () => {
+  return async (dispatch) => {
+    try {
+      let response = await axios.get('https://jsonplaceholder.typicode.com/users');
+      await dispatch(create('users', response.data));
+    } catch (err) {
+      dispatch(setStatusCreator(err));
+    }
+  };
+};
+
+// No Reducer will work on reducers and action creators for you  😲
+```
+
+#### WITHOUT No-Reducer 😭 
 ```js
 // ACTION
 export const action = () => {
@@ -41,24 +67,7 @@ const siteReducer = (state = initialState, action) => {
 
 export default siteReducer
 ```
-### With No-Reducer
-```js
-import {create} from 'no-reducer'
 
-// ACTION
-export const action = () => {
-  return async (dispatch) => {
-    try {
-      let response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      await dispatch(create('users', response.data));
-    } catch (err) {
-      dispatch(setStatusCreator(err));
-    }
-  };
-};
-
-// No Reducer will work on reducers and action creators for you
-```
 ### Set it up
 ```npm
 npm i no-reducer
@@ -337,6 +346,7 @@ dispatch(update('MyClass>students|id=4>companies', { name: "Meta" }, 5, 'cid'))
 ![Update Nested Array](https://vnseattle.com/dynamicReducer/updateTetedArray2.png)
 ### Append
 Append is the function that is used to merge new array to an array.
+
 ```js
 dispatch(append('DESTINATION',[my-new-array-items]));
 ```
