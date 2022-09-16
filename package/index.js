@@ -12,6 +12,7 @@ import { REPLACE } from './core/replace';
 import { UPDATE } from './core/update';
 import { APPEND } from './core/append';
 import { CLEAR } from './core/clear';
+import { REFRESH } from './core/refresh';
 
 /*************************************************************
  * Reducer Routers 
@@ -32,6 +33,8 @@ export const reducer = (state = {}, action) => {
             return APPEND(state, action);
         case "CLEAR":
             return CLEAR(state, action);
+        case "REFRESH":
+            return REFRESH(state, action)
         default:
             return state
 
@@ -147,3 +150,15 @@ export const clear = (name, value, target) => {
     }
 }
 
+/*************************************************************
+ * refresh 
+ * @name : object names
+ * @payloads : list of objects which has the same name
+ ************************************************************/
+export const refresh = (names, payload) => {
+    return {
+        type: "REFRESH",
+        names,
+        payload
+    }
+}

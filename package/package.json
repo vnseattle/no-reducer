@@ -1,6 +1,6 @@
 {
   "name": "no-reducer",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "No-Reducer is a utility that helps developers manage the store reducer without touching any reducer",
   "main": "index.js",
   "scripts": {
