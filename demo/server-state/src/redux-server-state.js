@@ -3,10 +3,10 @@ import axios from "axios"
 
 const stateRequest =  {
 
-    get : (url, config) =>{
+    get : (url, name ,config) =>{
         return async (dispatch) => {
-            const data = await axios.get(url,config)
-            dispatch(create(`${data}`,data))
+            const data = await axios.get(url,name,config)
+            dispatch(create(`${name || Object.keys(data.data)}`,data.data))
             
           
         }
