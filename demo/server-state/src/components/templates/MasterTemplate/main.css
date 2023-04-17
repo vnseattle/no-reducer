@@ -1,0 +1,377 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: Arial;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  overflow: hidden;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* width */
+
+.no-scroll-y::-webkit-scrollbar {
+  width: 0px;
+}
+
+.no-scroll-x::-webkit-scrollbar {
+  height: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: gray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(56, 56, 56);
+  cursor: grab;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1d5028;
+  cursor: grab;
+}
+
+.bar {
+  background: #ec1c24 !important;
+}
+
+#filter-select {
+  display: flex;
+}
+
+#filter-select .filter-find {
+  display: none;
+}
+
+.gears {
+  width: 48%;
+  display: inline-block;
+}
+.gears:first-child {
+  margin-right: 3%;
+}
+.gears-container {
+  width: 180px;
+  height: 150px;
+  font-size: 24px;
+  padding: 9%;
+  position: relative;
+  margin: 0px auto;
+}
+.message {
+  text-align: left;
+  letter-spacing: 0.15em;
+  padding: 40px;
+  line-height: 1.5em;
+  font-size: 0.75em;
+  background: #f6f6f6;
+  height: 100%;
+}
+.message h1 {
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 4px solid #de1b1b;
+}
+.gear-rotate {
+  width: 2em;
+  height: 2em;
+  top: 50%;
+  left: 50%;
+  margin-top: -1em;
+  margin-left: -1em;
+  background: #ec1c24;
+  position: absolute;
+  border-radius: 1em;
+  -webkit-animation: 1s gear-rotate linear infinite;
+  -moz-animation: 1s gear-rotate linear infinite;
+  animation: 1s gear-rotate linear infinite;
+}
+.gear-rotate-left {
+  margin-top: -2.2em;
+  top: 50%;
+  width: 2em;
+  height: 2em;
+  background: #ec1c24;
+  position: absolute;
+  border-radius: 1em;
+  -webkit-animation: 1s gear-rotate-left linear infinite;
+  -moz-animation: 1s gear-rotate-left linear infinite;
+  animation: 1s gear-rotate-left linear infinite;
+}
+
+.gear-rotate::before,
+.gear-rotate-left::before {
+  width: 2.8em;
+  height: 2.8em;
+  background: -webkit-linear-gradient(
+      0deg,
+      transparent 39%,
+      #ec1c24 39%,
+      #ec1c24 61%,
+      transparent 61%
+    ),
+    -webkit-linear-gradient(60deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%),
+    -webkit-linear-gradient(120deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%);
+  background: -moz-linear-gradient(
+      0deg,
+      transparent 39%,
+      #ec1c24 39%,
+      #47ec19 61%,
+      transparent 61%
+    ),
+    -moz-linear-gradient(60deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%),
+    -moz-linear-gradient(120deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%);
+  background: -o-linear-gradient(
+      0deg,
+      transparent 39%,
+      #ec1c24 39%,
+      #ec1c24 61%,
+      transparent 61%
+    ),
+    -o-linear-gradient(60deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%),
+    -o-linear-gradient(120deg, transparent 42%, #47ec19 42%, #ec1c24 58%, transparent
+          58%);
+  background: -ms-linear-gradient(
+      0deg,
+      transparent 39%,
+      #ec1c24 39%,
+      #ec1c24 61%,
+      transparent 61%
+    ),
+    -ms-linear-gradient(60deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%),
+    -ms-linear-gradient(120deg, transparent 42%, #ec1c24 42%, #ec1c24 58%, transparent
+          58%);
+  background: linear-gradient(
+      0deg,
+      transparent 39%,
+      #ec1c24 39%,
+      #ec1c24 61%,
+      transparent 61%
+    ),
+    linear-gradient(
+      60deg,
+      transparent 42%,
+      #ec1c24 42%,
+      #ec1c24 58%,
+      transparent 58%
+    ),
+    linear-gradient(
+      120deg,
+      transparent 42%,
+      #ec1c24 42%,
+      #ec1c24 58%,
+      transparent 58%
+    );
+  position: absolute;
+  content: "";
+  top: -0.4em;
+  left: -0.4em;
+  border-radius: 1.4em;
+}
+.gear-rotate::after,
+.gear-rotate-left::after {
+  width: 1em;
+  height: 1em;
+  background: #2b2b2b;
+  position: absolute;
+  content: "";
+  top: 0.5em;
+  left: 0.5em;
+  border-radius: 0.5em;
+}
+
+/*
+ * Keyframe Animations 
+ */
+
+@-webkit-keyframes gear-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+  }
+}
+
+@-moz-keyframes gear-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes gear-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@-webkit-keyframes gear-rotate-left {
+  0% {
+    -webkit-transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+@-moz-keyframes gear-rotate-left {
+  0% {
+    -webkit-transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+@keyframes gear-rotate-left {
+  0% {
+    -webkit-transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(210deg);
+  }
+}

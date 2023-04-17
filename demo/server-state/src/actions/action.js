@@ -1,8 +1,9 @@
-import state from '../redux-server-state';
-import { endpoints } from '../endpoints';
+import {create} from "no-reducer"
+import state from "./server-state"
+const API = "http://localhost:3000/"
 
-// GET POSTS 
-export const getPosts = () => state.get(endpoints.GET_POST(),'posts')
+export const getClassList = () => state.get(`${API}endpoint-class-list`)
 
-// DELETE A POST
-//export const deletePost = (id) => state.mPost(endpoints.DELETE_POST(id))
+export const getStudentsList = (className = "Computer Science") => state.get(`${API}endpoint-student-in-cs-class`)
+
+export const setCurrentClass = (className) =>  (dispatch) => dispatch(create('currentClass', {name: className}))
