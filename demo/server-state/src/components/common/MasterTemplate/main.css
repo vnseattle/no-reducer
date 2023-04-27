@@ -104,10 +104,17 @@ menu,
 nav,
 section {
   display: block;
+  
 }
 body {
   line-height: 1;
   overflow: hidden;
+  
+}
+main {
+  background: #202124 !important;
+    height: 90vh;
+    padding: 50px;
 }
 ol,
 ul {

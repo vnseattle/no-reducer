@@ -1,79 +1,24 @@
 {
-  "endpoint-class-list": {
-    "classes": [
-      {
-        "id": 1,
-        "name": "Math",
-        "total_students": 5
-      },
-      {
-        "id": 2,
-        "name": "Physics",
-        "total_students": 25
-      },
-      {
-        "id": 3,
-        "name": "Chemistry",
-        "total_students": 18
-      },
-      {
-        "id": 4,
-        "name": "Biology",
-        "total_students": 32
-      },
-      {
-        "id": 5,
-        "name": "History",
-        "total_students": 20
-      },
-      {
-        "id": 6,
-        "name": "English",
-        "total_students": 27
-      },
-      {
-        "id": 7,
-        "name": "Computer Science",
-        "total_students": 5
-      },
-      {
-        "id": 8,
-        "name": "Art",
-        "total_students": 22
-      },
-      {
-        "id": 9,
-        "name": "Physical Education",
-        "total_students": 35
-      },
-      {
-        "id": 10,
-        "name": "Geography",
-        "total_students": 19
-      },
-      {
-        "id": 11,
-        "name": "Social Studies",
-        "total_students": 23
-      },
-      {
-        "id": 12,
-        "name": "Music",
-        "total_students": 28
-      },
-      {
-        "id": 13,
-        "name": "Foreign Language",
-        "total_students": 17
-      },
-      {
-        "id": 14,
-        "name": "Economics",
-        "total_students": 21
-      }
-    ]
-  },
-  "endpoint-student-in-cs-class": {
-    "students": [  {    "id": 1,    "name": "John",    "pictureUrl": "https://randomuser.me/api/portraits/men/1.jpg"  },  {    "id": 2,    "name": "Mary",    "pictureUrl": "https://randomuser.me/api/portraits/women/2.jpg"  },  {    "id": 3,    "name": "David",    "pictureUrl": "https://randomuser.me/api/portraits/men/3.jpg"  },  {    "id": 4,    "name": "Sarah",    "pictureUrl": "https://randomuser.me/api/portraits/women/4.jpg"  },  {    "id": 5,    "name": "Michael",    "pictureUrl": "https://randomuser.me/api/portraits/men/5.jpg"  }]
-  }
+  "todos": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Finish homework",
+      "completed": false
+    },
+    {
+      "title": "hello",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "title": "hello",
+      "completed": false,
+      "id": 5
+    }
+  ]
 }

@@ -8,15 +8,15 @@ import { Provider } from 'react-redux';
 import thunk from "redux-thunk";
 
 const initialState = {
-  ds: {
-    list: [],
-    selectedId: null
-  }
+
 };
 
-let rootReducer = combineReducers({ ds: reducer })
+//let rootReducer = combineReducers({ ds: reducer })
 
-let store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+
+let rootReducer = reducer
+
+let store = createStore(rootReducer,initialState, applyMiddleware(thunk));
 
 const windowGlobal = typeof window !== "undefined" && window;
 
@@ -25,7 +25,7 @@ if (windowGlobal) {
   const composeEnhancer =
     windowGlobal.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   // use applyMiddleware to add the thunk middleware to the store
-  store = createStore(rootReducer, initialState, composeEnhancer(applyMiddleware(thunk))
+  store = createStore(rootReducer,initialState, composeEnhancer(applyMiddleware(thunk))
   );
 }
 
