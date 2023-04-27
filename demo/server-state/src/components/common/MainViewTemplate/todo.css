@@ -87,3 +87,15 @@
     background-color: #d32f2f;
   }
   
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Split into 3 equal columns */
+    gap: 10px; /* Optional gap between columns */
+    height: 100vh; /* Adjust height as needed */
+  }
+  
+  .column {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }

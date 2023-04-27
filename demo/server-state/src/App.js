@@ -4,9 +4,12 @@ import TodoListView from "./components/TodoView/TodoView"
 import TodoSubmit from "./components/TodoSubmit/TodoSubmit";
 import JSONViewer from "./components/JSONViewer/JSONViewer";
 const App = () => <MainViewTemplate>
-    <TodoListView/> 
-    <TodoSubmit />
-    <JSONViewer />
+     <div className="main-container">
+      <div className="column"><TodoListView/> </div>
+      <div className="column"> <TodoSubmit /></div>
+      <div className="column"><JSONViewer /></div>
+    </div>
+
     </MainViewTemplate>
 
 export default App;

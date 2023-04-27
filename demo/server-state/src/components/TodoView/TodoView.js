@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from "react-redux";
 
@@ -54,7 +54,6 @@ function TodoList(props) {
           </CSSTransition>
         ))}
       </TransitionGroup>
-  
 
     </div>
   );

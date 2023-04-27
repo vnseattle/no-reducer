@@ -1,4 +1,4 @@
-import { create } from 'no-reducer';
+import { create, append } from 'no-reducer';
 import axios from "axios"
 
 const stateRequest =  {
@@ -44,10 +44,9 @@ const stateRequest =  {
 
 const handleReturn = (url,config,res) =>{
     return async (dispatch) => {
-     
+        console.log(' reutrn' , config)
         // The result is not in root level, navigate to it
         if(config && config.root){
-            console.log('root')
             const isArray = Array.isArray((res.data[config.root]))
 
             if(isArray){
@@ -76,19 +75,27 @@ const handleStateName = (url,object, config) => {
     return async (dispatch) => {
 
             // if the config give a name
-            if(config && config?.state){
+            if(config && config.state){
                 object = {[config.state] :  object}
 
             // No name, no hope, use endpoint as a state name
             }else if(Array.isArray(object)){
                 const urlArray = url.split('/');
-                const objName = urlArray[urlArray.length-1]
+                const objName = urlArray[urlArray.length-1].split('?')[0]
                 object = {[objName] :  object}
             }
 
-
+            let i = 0;
             for (const key in object) {
-                dispatch(create(key,object[key]))
+                if(config && config.action){
+                    if(config.action[i]==="append"){
+                        dispatch(append(key,[...object[key]]))
+                    }
+                }else{
+                    dispatch(create(key,object[key]))
+                }
+
+                i++; 
             }
     
     }

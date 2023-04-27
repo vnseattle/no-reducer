@@ -3,13 +3,27 @@ import { append } from "no-reducer"
 const API = "http://localhost:3000"
 
 
+/**
+These returns are an array without a key object.
+And it doesn't have a config to specify the name of the reducer.
+Therefore, the endpoint will be the name of the reducer.
+*/
 export const getAllTodos = () => state.get(`${API}/todos`)
 
 export const addNewItem = (title) => state.post(`${API}/todos`,{title,completed:false})
 
-export const setCompletedItem = (todo) => state.put(`${API}/todos/${todo.id}`,{...todo, completed:!todo.completed},{state:'todos'})
 
-export const deleteItem = (todo) => state.delete(`${API}/todos/${todo.id}`, null ,{state:'todos'})
+/**
+These returns are an array without a key object.
+The endpoint cannot be determined the reducer's name.
+Hence, we need to create a config that specifies the name of the reducer.
+*/
+
+const cfg = {state:"todos"}
+
+export const setCompletedItem = (todo) => state.put(`${API}/todos/${todo.id}`,{...todo, completed:!todo.completed},cfg)
+
+export const deleteItem = (todo) => state.delete(`${API}/todos/${todo.id}`, null ,cfg)
 
 
 

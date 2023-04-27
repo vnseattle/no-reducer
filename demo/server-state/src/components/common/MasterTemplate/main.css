@@ -113,8 +113,8 @@ body {
 }
 main {
   background: #202124 !important;
-    height: 90vh;
-    padding: 50px;
+    height: 100vh;
+    padding: 10px;
 }
 ol,
 ul {
