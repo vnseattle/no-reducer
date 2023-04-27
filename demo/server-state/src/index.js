@@ -11,10 +11,10 @@ const initialState = {
 
 };
 
-//let rootReducer = combineReducers({ ds: reducer })
+let rootReducer = combineReducers({ ds: reducer })
 
 
-let rootReducer = reducer
+//let rootReducer = reducer
 
 let store = createStore(rootReducer,initialState, applyMiddleware(thunk));
 

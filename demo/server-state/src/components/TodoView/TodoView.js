@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from "react-redux";
 
-import { getAllTodos, setCompletedItem, deleteItem } from "./../../actions/action"
+import { getAllTodos, setCompletedItem, deleteItem  } from "./../../actions/action"
 
 function TodoList(props) {
 
@@ -26,9 +26,8 @@ function TodoList(props) {
   return (
     <div className="container">
       <h1 className="heading">Todo List</h1>
-
       <TransitionGroup component="ul" className="todo-list">
-        {props.todos?.map((todo) => (
+        {props.ds?.todos?.map((todo) => (
           <CSSTransition key={todo.id} timeout={300} classNames="item">
             <li className="todo-item">
             
@@ -55,6 +54,8 @@ function TodoList(props) {
           </CSSTransition>
         ))}
       </TransitionGroup>
+  
+
     </div>
   );
 }

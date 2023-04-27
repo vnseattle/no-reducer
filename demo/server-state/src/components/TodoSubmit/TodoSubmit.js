@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import { connect } from "react-redux";
-import {addNewItem} from "./../../actions/action"
+import {addNewItem, addSampleItem} from "./../../actions/action"
 
 function TodoSubmit(props) {
   const [newTodo, setNewTodo] = useState('');
@@ -36,9 +36,11 @@ function TodoSubmit(props) {
           Add
         </button>
       </div>
-
+      <button onClick={()=> props.addSampleItem()} className="button">
+          Add Sample Task
+        </button>
     </div>
   );
 }
 
-export default connect(null,{addNewItem})(TodoSubmit);
+export default connect(null,{addNewItem, addSampleItem})(TodoSubmit);

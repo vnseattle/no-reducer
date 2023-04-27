@@ -8,7 +8,7 @@ function JViewer(props) {
   return (
     <div className="container" style={{marginTop:'10px'}}> 
 
-    <b>todos</b> :  <JSONPretty id="json-pretty" data={props.todos}></JSONPretty>
+    <b>todos</b> :  <JSONPretty id="json-pretty" data={props.ds?.todos}></JSONPretty>
 
     
     </div>

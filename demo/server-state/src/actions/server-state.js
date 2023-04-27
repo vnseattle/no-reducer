@@ -85,9 +85,11 @@ const handleStateName = (url,object, config) => {
                 const objName = urlArray[urlArray.length-1]
                 object = {[objName] :  object}
             }
+
+
             for (const key in object) {
                 dispatch(create(key,object[key]))
-              }
+            }
     
     }
 }
