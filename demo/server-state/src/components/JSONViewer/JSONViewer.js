@@ -1,6 +1,5 @@
-import React, {useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
-import {addNewItem} from "./../../actions/action"
 import JSONPretty from 'react-json-pretty';
 
 function JViewer(props) {

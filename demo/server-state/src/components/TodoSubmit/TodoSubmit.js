@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import { connect } from "react-redux";
-import {addNewItem, addSampleItem} from "./../../actions/action"
+import {addNewItem, addSampleItem} from "./../../actions/basicAction"
 
 function TodoSubmit(props) {
   const [newTodo, setNewTodo] = useState('');

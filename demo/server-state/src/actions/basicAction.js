@@ -3,6 +3,9 @@ import { append } from "no-reducer"
 const API = "http://localhost:3000"
 
 
+
+/********* BASIC ACTIONS ***********************/
+
 /**
 These returns are an array without a key object.
 And it doesn't have a config to specify the name of the reducer.

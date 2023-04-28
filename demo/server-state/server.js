@@ -8,8 +8,8 @@ router.render = (req, res) => {
     const object = req._parsedUrl.path.split("?")[0];
     const page = req._parsedUrl.path.split("?")[1]
     if(page){
-    const startIndex = (page - 1) * 25;
-    const endIndex = page * 25;
+    const startIndex = (page - 1) * 2;
+    const endIndex = page * 2;
   
     const lodashWrapper = _(router.db.get(object.replace('/','')));
         // Slice the array based on the start and end indices

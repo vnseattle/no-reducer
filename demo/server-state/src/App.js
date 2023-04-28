@@ -5,9 +5,9 @@ import TodoSubmit from "./components/TodoSubmit/TodoSubmit";
 import JSONViewer from "./components/JSONViewer/JSONViewer";
 const App = () => <MainViewTemplate>
      <div className="main-container">
-      <div className="column"><TodoListView/> </div>
-      <div className="column"> <TodoSubmit /></div>
-      <div className="column"><JSONViewer /></div>
+      <div className="column">Component 1<TodoListView/> </div>
+      <div className="column">Component 2 <TodoSubmit /></div>
+      <div className="column">Reducer: <JSONViewer /></div>
     </div>
 
     </MainViewTemplate>

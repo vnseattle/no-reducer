@@ -1,0 +1,494 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Finish homework",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Go for a run",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "title": "Call mom",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Read a book",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "title": "Pay bills",
+      "completed": false
+    },
+    {
+      "id": 7,
+      "title": "Clean the house",
+      "completed": false
+    },
+    {
+      "id": 8,
+      "title": "Attend a meeting",
+      "completed": true
+    },
+    {
+      "id": 9,
+      "title": "Cook dinner",
+      "completed": false
+    },
+    {
+      "id": 10,
+      "title": "Walk the dog",
+      "completed": true
+    },
+    {
+      "id": 11,
+      "title": "Do laundry",
+      "completed": false
+    },
+    {
+      "id": 12,
+      "title": "Write report",
+      "completed": true
+    },
+    {
+      "id": 13,
+      "title": "Buy birthday gift",
+      "completed": false
+    },
+    {
+      "id": 14,
+      "title": "Go to the gym",
+      "completed": false
+    },
+    {
+      "id": 15,
+      "title": "Watch a movie",
+      "completed": true
+    },
+    {
+      "id": 16,
+      "title": "Make a to-do list",
+      "completed": false
+    },
+    {
+      "id": 17,
+      "title": "Take a nap",
+      "completed": false
+    },
+    {
+      "id": 18,
+      "title": "Study for exam",
+      "completed": true
+    },
+    {
+      "id": 19,
+      "title": "Visit a friend",
+      "completed": false
+    },
+    {
+      "id": 20,
+      "title": "Go shopping",
+      "completed": true
+    },
+    {
+      "id": 21,
+      "title": "Fix the car",
+      "completed": false
+    },
+    {
+      "id": 22,
+      "title": "Attend a concert",
+      "completed": false
+    },
+    {
+      "id": 23,
+      "title": "Prepare presentation",
+      "completed": true
+    },
+    {
+      "id": 24,
+      "title": "Plant flowers",
+      "completed": false
+    },
+    {
+      "id": 25,
+      "title": "Go on a hike",
+      "completed": true
+    },
+    {
+      "id": 26,
+      "title": "Clean the garage",
+      "completed": false
+    },
+    {
+      "id": 27,
+      "title": "Learn a new language",
+      "completed": false
+    },
+    {
+      "id": 28,
+      "title": "Organize files",
+      "completed": true
+    },
+    {
+      "id": 29,
+      "title": "Have a picnic",
+      "completed": false
+    },
+    {
+      "id": 30,
+      "title": "Start a journal",
+      "completed": true
+    },
+    {
+      "id": 31,
+      "title": "Volunteer at a shelter",
+      "completed": false
+    },
+    {
+      "id": 32,
+      "title": "Attend a workshop",
+      "completed": false
+    },
+    {
+      "id": 33,
+      "title": "Do yoga",
+      "completed": true
+    },
+    {
+      "id": 34,
+      "title": "Write a song",
+      "completed": false
+    },
+    {
+      "id": 35,
+      "title": "Go fishing",
+      "completed": false
+    },
+    {
+      "id": 36,
+      "title": "Fix a leaky faucet",
+      "completed": true
+    },
+    {
+      "id": 37,
+      "title": "Explore a new city",
+      "completed": false
+    },
+    {
+      "id": 38,
+      "title": "Start a blog",
+      "completed": true
+    },
+    {
+      "id": 39,
+      "title": "Buy new clothes",
+      "completed": false
+    },
+    {
+      "id": 40,
+      "title": "Learn to play guitar",
+      "completed": true
+    },
+    {
+      "id": 41,
+      "title": "Take a cooking class",
+      "completed": false
+    },
+    {
+      "id": 42,
+      "title": "Go to the beach",
+      "completed": false
+    },
+    {
+      "id": 43,
+      "title": "Paint a picture",
+      "completed": true
+    },
+    {
+      "id": 44,
+      "title": "Try a new recipe",
+      "completed": false
+    },
+    {
+      "id": 45,
+      "title": "Visit a museum",
+      "completed": true
+    },
+    {
+      "id": 46,
+      "title": "Go on a road trip",
+      "completed": false
+    },
+    {
+      "id": 47,
+      "title": "Plant a vegetable garden",
+      "completed": false
+    },
+    {
+      "id": 48,
+      "title": "Take a dance class",
+      "completed": true
+    },
+    {
+      "id": 49,
+      "title": "Read a motivational book",
+      "completed": false
+    },
+    {
+      "id": 50,
+      "title": "Have a barbecue party",
+      "completed": true
+    },
+    {
+      "id": 51,
+      "title": "Go to a comedy show",
+      "completed": false
+    },
+    {
+      "id": 52,
+      "title": "Start a workout routine",
+      "completed": false
+    },
+    {
+      "id": 53,
+      "title": "Attend a sports event",
+      "completed": true
+    },
+    {
+      "id": 54,
+      "title": "Learn to meditate",
+      "completed": false
+    },
+    {
+      "id": 55,
+      "title": "Visit a zoo",
+      "completed": true
+    },
+    {
+      "id": 56,
+      "title": "Take a photography class",
+      "completed": false
+    },
+    {
+      "id": 57,
+      "title": "Try a new restaurant",
+      "completed": false
+    },
+    {
+      "id": 58,
+      "title": "Visit a botanical garden",
+      "completed": true
+    },
+    {
+      "id": 59,
+      "title": "Learn to code",
+      "completed": false
+    },
+    {
+      "id": 60,
+      "title": "Go camping",
+      "completed": true
+    },
+    {
+      "id": 61,
+      "title": "Start a DIY project",
+      "completed": false
+    },
+    {
+      "id": 64,
+      "title": "Go for a bike ride",
+      "completed": false
+    },
+    {
+      "id": 65,
+      "title": "Organize a game night",
+      "completed": false
+    },
+    {
+      "id": 66,
+      "title": "Learn to knit",
+      "completed": true
+    },
+    {
+      "id": 67,
+      "title": "Go horseback riding",
+      "completed": false
+    },
+    {
+      "id": 68,
+      "title": "Start a book club",
+      "completed": true
+    },
+    {
+      "id": 69,
+      "title": "Try a new hairstyle",
+      "completed": false
+    },
+    {
+      "id": 70,
+      "title": "Visit a historical site",
+      "completed": true
+    },
+    {
+      "id": 71,
+      "title": "Learn to juggle",
+      "completed": false
+    },
+    {
+      "id": 72,
+      "title": "Go on a wine tasting tour",
+      "completed": false
+    },
+    {
+      "id": 73,
+      "title": "Take a pottery class",
+      "completed": true
+    },
+    {
+      "id": 74,
+      "title": "Try a new sport",
+      "completed": false
+    },
+    {
+      "id": 75,
+      "title": "Attend a cooking workshop",
+      "completed": true
+    },
+    {
+      "id": 76,
+      "title": "Go on a spa retreat",
+      "completed": false
+    },
+    {
+      "id": 77,
+      "title": "Start a home garden",
+      "completed": false
+    },
+    {
+      "id": 78,
+      "title": "Learn to play chess",
+      "completed": true
+    },
+    {
+      "id": 79,
+      "title": "Visit a theme park",
+      "completed": false
+    },
+    {
+      "id": 80,
+      "title": "Try a new type of cuisine",
+      "completed": true
+    },
+    {
+      "id": 81,
+      "title": "Go on a ghost tour",
+      "completed": false
+    },
+    {
+      "id": 82,
+      "title": "Start a collection",
+      "completed": false
+    },
+    {
+      "id": 83,
+      "title": "Take a self-defense class",
+      "completed": true
+    },
+    {
+      "id": 84,
+      "title": "Go to a farmer's market",
+      "completed": false
+    },
+    {
+      "id": 85,
+      "title": "Learn to do magic tricks",
+      "completed": true
+    },
+    {
+      "id": 86,
+      "title": "Try a new typeof dance",
+      "completed": false
+    },
+    {
+      "id": 87,
+      "title": "Attend a wine and cheese tasting",
+      "completed": true
+    },
+    {
+      "id": 88,
+      "title": "Start a podcast",
+      "completed": false
+    },
+    {
+      "id": 89,
+      "title": "Go on a nature hike",
+      "completed": true
+    },
+    {
+      "id": 90,
+      "title": "Learn to do calligraphy",
+      "completed": false
+    },
+    {
+      "id": 91,
+      "title": "Volunteer at a local charity",
+      "completed": true
+    },
+    {
+      "id": 92,
+      "title": "Try a new workout class",
+      "completed": false
+    },
+    {
+      "id": 93,
+      "title": "Go stargazing",
+      "completed": false
+    },
+    {
+      "id": 94,
+      "title": "Start a DIY home improvement project",
+      "completed": true
+    },
+    {
+      "id": 95,
+      "title": "Visit an art gallery",
+      "completed": false
+    },
+    {
+      "id": 96,
+      "title": "Learn to play a musical instrument",
+      "completed": true
+    },
+    {
+      "id": 97,
+      "title": "Go on a hot air balloon ride",
+      "completed": false
+    },
+    {
+      "id": 98,
+      "title": "Start a meditation practice",
+      "completed": false
+    },
+    {
+      "id": 99,
+      "title": "Try a new type of tea",
+      "completed": true
+    },
+    {
+      "id": 100,
+      "title": "Go on a weekend getaway",
+      "completed": false
+    }
+  ]
+}

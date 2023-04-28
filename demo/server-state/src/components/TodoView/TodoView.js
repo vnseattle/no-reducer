@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from "react-redux";
 
-import { getAllTodos, setCompletedItem, deleteItem  } from "./../../actions/action"
+import { getAllTodos, setCompletedItem, deleteItem  } from "./../../actions/basicAction"
 
 function TodoList(props) {
+  const [page,setPage] = useState(1);
 
   useEffect(()=>{
     // Get list 
@@ -20,6 +21,11 @@ function TodoList(props) {
   const handleDeleteTodo = (todo) => {
     props.deleteItem(todo)
   };
+
+  const handleGetTodos = () => {
+    props.appendTodos(page+1); 
+    setPage(page+1)
+  }
 
   
 
@@ -54,7 +60,6 @@ function TodoList(props) {
           </CSSTransition>
         ))}
       </TransitionGroup>
-
     </div>
   );
 }

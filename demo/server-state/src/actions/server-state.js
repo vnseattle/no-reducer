@@ -1,3 +1,10 @@
+/*************************************************************
+Redux Server State
+© 2023 Henry Nguyen a.k.a Dev9x
+This library is designed to retrieve the results from an API request 
+and store them as a state in the reducer on the client-side.
+************************************************************/
+
 import { create, append } from 'no-reducer';
 import axios from "axios"
 
@@ -44,11 +51,9 @@ const stateRequest =  {
 
 const handleReturn = (url,config,res) =>{
     return async (dispatch) => {
-        console.log(' reutrn' , config)
         // The result is not in root level, navigate to it
         if(config && config.root){
             const isArray = Array.isArray((res.data[config.root]))
-
             if(isArray){
                 if(res.data[config.root].length === 1){
                     dispatch(handleStateName(url,res.data[config.root][0],config))
@@ -56,9 +61,6 @@ const handleReturn = (url,config,res) =>{
             }else{
                 dispatch(handleStateName(url,res.data[config.root],config))
             }
-
-            
-
         }else{
             dispatch(handleStateName(url,res.data,config))
           
@@ -73,7 +75,6 @@ const handleReturn = (url,config,res) =>{
 // if the result is an array, there is no object name
 const handleStateName = (url,object, config) => {
     return async (dispatch) => {
-
             // if the config give a name
             if(config && config.state){
                 object = {[config.state] :  object}
