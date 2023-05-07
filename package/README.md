@@ -11,7 +11,9 @@ This library is an add-on, which means you can use it alongside your existing wa
 ## Demo 
 
 [LIVE DEMO  - Todo List ](https://codesandbox.io/s/no-reducer-5sydfd?file=/actions.js )
+
 [Todo List - Src code and instruction ](https://github.com/vnseattle/no-reducer/tree/main/demo/todo-basic )
+
 [All features  - Src code and instruction ](https://github.com/vnseattle/no-reducer/tree/main/demo/main )
 
 ## Installation
@@ -61,7 +63,9 @@ await dispatch(create('User', response.data));
 
 ## Documents
 Manual: https://docs.no-reducer.com 
+
 Git: https://github.com/vnseattle/no-reducer 
+
 Tutorial: https://medium.com/@thankyouforyouremail3000/using-reducer-with-no-reducer-29bc29c7622b
 
 ## Happy Coding
